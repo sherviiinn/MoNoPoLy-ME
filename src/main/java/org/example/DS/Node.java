@@ -1,10 +1,10 @@
 package org.example.DS;
 
 public class Node<T> {
-    T data;
-    Node<T> next;
-    public Node(T data) {
+    public T data;
+    public Node<T> next;
+    public Node(T data, Node<T> next) {
         this.data = data;
-        this.next = null;
+        this.next = next;
     }
 }

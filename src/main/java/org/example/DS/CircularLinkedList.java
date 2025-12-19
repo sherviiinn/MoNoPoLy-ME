@@ -21,17 +21,18 @@ public class CircularLinkedList<T> {
         return node.next;
     }
     public void add(T data) {
-        if(isEmpty()) {
-            head = new Node<>(data);
+        Node<T> newNode = new Node<>(data);
+        if (isEmpty()) {
+            head = newNode;
             head.next = head;
-        }
-        else {
+        } else {
             Node<T> current = head;
-            while(current.next != null) {
+
+            while (current.next != head) {
                 current = current.next;
             }
-            current.next = new Node<>(data);
-            current.next.next = head;
+            current.next = newNode;
+            newNode.next = head;
         }
         size++;
     }
